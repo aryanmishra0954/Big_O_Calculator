@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big O Calculator - Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/clike/clike.min.js"></script>
+</head>
+<body class="analyzer-vibe">
+    
+    <nav class="navbar">
+        <div class="nav-brand">Big O Calculator</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="analyzer.html" class="active">Analyzer</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <div class="layout-wrapper">
+        <div class="editor-panel">
+            <div class="panel-header">Code Editor</div>
+            <textarea id="codeInput"></textarea>
+            <button id="analyzeBtn">
+                <span id="btnText">Run Analysis</span>
+                <div id="btnSpinner" class="spinner hidden"></div>
+            </button>
+        </div>
+        
+        <div id="resultBox" class="results-panel hidden">
+            <div class="metric-card">
+                <div class="metric-title">Runtime Complexity</div>
+                <div class="metric-value" id="timeResult">-</div>
+                <div class="chart-wrapper"><canvas id="timeChart"></canvas></div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-title">Memory Complexity</div>
+                <div class="metric-value" id="spaceResult">-</div>
+                <div class="chart-wrapper"><canvas id="spaceChart"></canvas></div>
+            </div>
+
+            <div id="tipBox" class="tip-box"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
