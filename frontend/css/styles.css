@@ -71,9 +71,12 @@ body.about-vibe::before {
     height: 22px;
 }
 
-.nav-links {
-    display: flex;
-    gap: 24px;
+.nav-links a {
+    text-decoration: none;
+    color: #A0A0A0; 
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
 .nav-links a {
