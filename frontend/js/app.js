@@ -101,11 +101,11 @@ analyzeBtn.addEventListener('click', async () => {
     resultBox.classList.add('hidden');
 
     try {
-        const response = await fetch('http://localhost:5000/analyze', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ code })
-        });
+    const response = await fetch('https://big-o-calculator.onrender.com/analyze', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ code })
+    });
         
         const data = await response.json();
         if (data.error) throw new Error(data.error);
