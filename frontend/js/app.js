@@ -14,7 +14,7 @@ const editor = CodeMirror.fromTextArea(document.getElementById("codeInput"), {
     matchBrackets: true
 });
 
-// 1. TYPOGRAPHY HELPER
+
 const formatComplexity = (str) => {
     return str
         .replace(/\^(\d+)/g, '<sup>$1</sup>')

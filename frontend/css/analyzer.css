@@ -1,0 +1,125 @@
+body.analyzer-vibe {
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.editor-panel {
+    flex: 1.5;
+    min-width: 400px;
+    background: #000;
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid #222;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.panel-header {
+    font-size: 11px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0;
+    padding: 12px 16px;
+    background: #111;
+    border-bottom: 1px solid #222;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.panel-header::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #333;
+    margin-right: 48px;
+    box-shadow: 16px 0 0 #333, 32px 0 0 #333;
+}
+
+.CodeMirror {
+    height: 380px !important;
+    border-radius: 0 0 8px 8px;
+    font-family: ui-monospace, SFMono-Regular, Consolas, Menlo, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    background: #000 !important;
+    border-left: none;
+    border-right: none;
+}
+
+.CodeMirror-gutters {
+    background: #050505 !important;
+    border-right: 1px solid #222 !important;
+}
+
+button#analyzeBtn {
+    width: calc(100% - 32px);
+    margin: 16px;
+    padding: 14px;
+    background: #ededed;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+button#analyzeBtn:hover {
+    background: #fff;
+}
+
+button#analyzeBtn:disabled {
+    background: #222;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.results-panel {
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.metric-value {
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 24px;
+    letter-spacing: -2px;
+}
+
+.metric-value sup {
+    font-size: 18px; 
+    color: #888;
+    margin-left: 2px;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 140px;
+    width: 100%;
+    border-top: 1px solid #222;
+    padding-top: 16px;
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}

@@ -1,0 +1,148 @@
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.bento-card {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 32px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bento-card:hover {
+    border-color: #444;
+    transform: translateY(-2px);
+}
+
+.hero-tile {
+    grid-column: span 2;
+    background: linear-gradient(145deg, #0a0a0a 0%, #111 100%);
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.dev-name {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    margin-bottom: 8px;
+    color: #ffffff; 
+}
+
+.dev-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #00e5ff;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dev-college {
+    font-size: 15px;
+    color: #888;
+    font-weight: 500;
+}
+
+.bento-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+}
+
+.bento-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #a1a1aa;
+}
+
+.live-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    padding: 6px 12px;
+    border: 1px solid #222;
+    border-radius: 50px;
+    background: #000;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #22c55e;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.social-tile {
+    flex-direction: row;
+    gap: 16px;
+    grid-column: span 2;
+    padding: 24px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    background: #000;
+    color: #ededed;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+    flex: 1;
+}
+
+.social-btn svg {
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+.social-btn:hover {
+    border-color: #666;
+    background: #111;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-tile, .span-2, .social-tile {
+        grid-column: span 1;
+    }
+    .social-tile {
+        flex-direction: column;
+    }
+}

@@ -6,48 +6,62 @@
     <title>Big O Calculator - Pro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
-    <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/clike/clike.min.js"></script>
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/analyzer.css">
 </head>
 <body class="analyzer-vibe">
     
-    <nav class="navbar">
-        <div class="nav-brand">Big O Calculator</div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="analyzer.html" class="active">Analyzer</a>
-            <a href="about.html">About</a>
-        </div>
-    </nav>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M7 12h2l2-5 2 10 2-5h2"/>
+                </svg>
+                Big O Calculator
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="analyzer.html" class="active" aria-current="page">Analyzer</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+    </header>
 
-    <div class="layout-wrapper">
+    <main class="layout-wrapper">
         <div class="editor-panel">
-            <div class="panel-header">Code Editor</div>
-            <textarea id="codeInput"></textarea>
+            <h1 class="panel-header">Code Editor</h1>
+            <textarea id="codeInput" aria-label="Paste your code here for analysis"></textarea>
             <button id="analyzeBtn">
                 <span id="btnText">Run Analysis</span>
                 <div id="btnSpinner" class="spinner hidden"></div>
             </button>
         </div>
         
-        <div id="resultBox" class="results-panel hidden">
+        <div id="resultBox" class="results-panel hidden" aria-live="polite">
             <div class="metric-card">
-                <div class="metric-title">Runtime Complexity</div>
+                <h2 class="metric-title">Runtime Complexity</h2>
                 <div class="metric-value" id="timeResult">-</div>
-                <div class="chart-wrapper"><canvas id="timeChart"></canvas></div>
+                <div class="chart-wrapper">
+                    <canvas id="timeChart" aria-label="Runtime complexity chart" role="img"></canvas>
+                </div>
             </div>
             
             <div class="metric-card">
-                <div class="metric-title">Memory Complexity</div>
+                <h2 class="metric-title">Memory Complexity</h2>
                 <div class="metric-value" id="spaceResult">-</div>
-                <div class="chart-wrapper"><canvas id="spaceChart"></canvas></div>
+                <div class="chart-wrapper">
+                    <canvas id="spaceChart" aria-label="Memory complexity chart" role="img"></canvas>
+                </div>
             </div>
 
             <div id="tipBox" class="tip-box"></div>
         </div>
-    </div>
+    </main>
 
     <script src="js/app.js"></script>
 </body>

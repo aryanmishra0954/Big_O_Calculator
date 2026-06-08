@@ -1,0 +1,85 @@
+.landing-container {
+    max-width: 700px;
+    text-align: center;
+    margin: 100px auto;
+}
+
+.landing-title {
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: -2.5px;
+    margin-bottom: 24px;
+    line-height: 1.1;
+    color: #ffffff;
+    text-shadow: 0 0 80px rgba(255, 255, 255, 0.15);
+}
+
+.landing-subtitle {
+    font-size: 18px;
+    color: #888; 
+    line-height: 1.6;
+    margin-bottom: 48px;
+    font-weight: 400;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.2s;
+    border: 1px solid #ffffff;
+}
+
+.cta-button:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+
+body.home-vibe {
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: center center;
+}
+
+.landing-container {
+    position: relative;
+    z-index: 1;
+}
+
+.landing-container::before {
+    content: 'O(N²)';
+    position: absolute;
+    top: -120px;
+    left: -150px;
+    font-size: 280px;
+    font-weight: 900;
+    letter-spacing: -10px;
+    color: rgba(255, 255, 255, 0.02); 
+    z-index: -1;
+    transform: rotate(-10deg);
+    pointer-events: none;
+    user-select: none;
+}
+
+.landing-container::after {
+    content: 'O(log N)';
+    position: absolute;
+    bottom: -100px;
+    right: -150px;
+    font-size: 200px;
+    font-weight: 900;
+    letter-spacing: -5px;
+    color: rgba(255, 255, 255, 0.02);
+    z-index: -1;
+    transform: rotate(5deg);
+    pointer-events: none;
+    user-select: none;
+}
