@@ -33,9 +33,11 @@ app.post('/analyze', async (req, res) => {
         
         const jsonResult = JSON.parse(responseText);
         res.json(jsonResult);
+
     } catch (error) {
         res.status(500).json({ error: "Analysis Failed: " + error.message });
     }
+    
 });
 
 app.listen(5000, () => console.log("Server running on port 5000"));
